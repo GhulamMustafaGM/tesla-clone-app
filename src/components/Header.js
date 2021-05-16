@@ -20,6 +20,8 @@ function Header() {
                 <a href="#">Shop</a>
                 <a href="#">Tesla Account</a>
             </RightMenu>
+
+            <CustomMenu />
         </Container>
     )
 }
@@ -31,6 +33,7 @@ min-height: 60px;
 position: fixed;
 display: flex;
 align-items: center;
+justify-content: space-between;
 padding: 0 20px;
 top: 0;
 left: 0;
@@ -51,12 +54,23 @@ const Menu = styled.div`
         flex-wrap: nowrap;
     }
 
+    @media(max-width: 768px) {
+        display: none;
+    }
+
 `
 
 const RightMenu = styled.div`
+    display: flex;
+    align-items: center;
     a {
         font-weight: 600;
         text-transform: uppercase;
         margin-right: 10px;
     }
+`
+
+const CustomMenu = styled(MenuIcon)`
+    cursor: pointer;
+
 `
